@@ -1,147 +1,153 @@
 /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-no-qualifying-type, selector-max-id */
 
-#crm-notification-container div {
-  &.ui-notify-message {
-    border-radius: $border-radius-base;
+#crm-notification-container {
+  bottom: 15px;
+  // Fix for Gin admin theme.
+  top: inherit;
 
-    div.icon {
-      display: none;
-    }
+  div {
+    &.ui-notify-message {
+      border-radius: $border-radius-base;
 
-    &.error {
-      h1::before {
-        @include fa-icon($font-size-base, $fa-var-alert, $brand-danger);
-      }
-
-      // This removes an extra icon on the body of error notifications:
-      .notify-content .crm-i.fa-exclamation-triangle {
+      div.icon {
         display: none;
       }
-    }
 
-    &.alert {
-      h1::before {
-        @include fa-icon($font-size-base, $fa-var-alert, $brand-warning);
+      &.error {
+        h1::before {
+          @include fa-icon($font-size-base, $fa-var-alert, $brand-danger);
+        }
+
+        // This removes an extra icon on the body of error notifications:
+        .notify-content .crm-i.fa-exclamation-triangle {
+          display: none;
+        }
       }
-    }
 
-    &.success {
-      h1::before {
-        @include fa-icon($font-size-base, $fa-var-success, $brand-success);
+      &.alert {
+        h1::before {
+          @include fa-icon($font-size-base, $fa-var-alert, $brand-warning);
+        }
       }
-    }
 
-    &.info {
-      h1::before {
-        @include fa-icon($font-size-base, $fa-var-info-msg, $brand-info);
+      &.success {
+        h1::before {
+          @include fa-icon($font-size-base, $fa-var-success, $brand-success);
+        }
       }
-    }
 
-    h1 {
-      font-size: $font-size-base;
-      font-weight: $crm-font-weight-h1;
-      padding-left: 0;
-
-      &::before {
-        margin-right: 5px;
+      &.info {
+        h1::before {
+          @include fa-icon($font-size-base, $fa-var-info-msg, $brand-info);
+        }
       }
-    }
 
-    &,
-    a.ui-notify-cross,
-    h1,
-    td {
-      color: $gray-darker;
-    }
+      h1 {
+        font-size: $font-size-base;
+        font-weight: $crm-font-weight-h1;
+        padding-left: 0;
 
-    table {
-      table-layout: fixed;
-    }
-
-    td {
-      font-size: $font-size-base;
-      word-wrap: break-word;
-    }
-
-    a {
-      color: $brand-primary;
+        &::before {
+          margin-right: 5px;
+        }
+      }
 
       &,
-      &:link {
-        text-decoration: none;
+      a.ui-notify-cross,
+      h1,
+      td {
+        color: $gray-darker;
       }
 
-      &.ui-button {
-        background: $brand-primary;
-        border-color: $brand-primary;
-        color: $crm-white;
-        text-decoration: none;
+      table {
+        table-layout: fixed;
+      }
 
-        .ui-icon {
-          margin-top: 0;
+      td {
+        font-size: $font-size-base;
+        word-wrap: break-word;
+      }
+
+      a {
+        color: $brand-primary;
+
+        &,
+        &:link {
+          text-decoration: none;
+        }
+
+        &.ui-button {
+          background: $brand-primary;
+          border-color: $brand-primary;
+          color: $crm-white;
+          text-decoration: none;
+
+          .ui-icon {
+            margin-top: 0;
+          }
+
+          &:hover {
+            background: darken($brand-primary, $crm-darken-percentage);
+            border-color: darken($brand-primary, $crm-darken-percentage);
+            color: $crm-white;
+          }
         }
 
         &:hover {
-          background: darken($brand-primary, $crm-darken-percentage);
-          border-color: darken($brand-primary, $crm-darken-percentage);
+          color: darken($brand-primary, $crm-darken-percentage);
+        }
+      }
+
+      .notify-content {
+        ul {
+          margin: 0 15px;
+        }
+
+        .ui-state-default {
+          background: $brand-primary;
+          border-color: $brand-primary;
           color: $crm-white;
-        }
-      }
+          text-decoration: none;
 
-      &:hover {
-        color: darken($brand-primary, $crm-darken-percentage);
-      }
-    }
+          .ui-button-text {
+            color: $crm-white;
+          }
 
-    .notify-content {
-      ul {
-        margin: 0 15px;
-      }
+          .ui-icon {
+            margin-top: -6px;
+          }
 
-      .ui-state-default {
-        background: $brand-primary;
-        border-color: $brand-primary;
-        color: $crm-white;
-        text-decoration: none;
-
-        .ui-button-text {
-          color: $crm-white;
-        }
-
-        .ui-icon {
-          margin-top: -6px;
-        }
-
-        &:hover {
-          background: $crm-blue-light;
+          &:hover {
+            background: $crm-blue-light;
+          }
         }
       }
     }
-  }
 
-  &.ui-notify-message-style {
-    background: $crm-white;
-    box-shadow: $box-shadow;
-    color: $crm-copy;
+    &.ui-notify-message-style {
+      background: $crm-white;
+      box-shadow: $box-shadow;
+      color: $crm-copy;
 
-    p {
-      font-size: $font-size-base;
-      line-height: 20px;
-      margin-bottom: 10px;
-    }
+      p {
+        font-size: $font-size-base;
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
 
-    table {
-      td,
-      th {
-        background: $crm-white;
-        border-color: $gray-light;
-        color: $gray-dark;
+      table {
+        td,
+        th {
+          background: $crm-white;
+          border-color: $gray-light;
+          color: $gray-dark;
+        }
       }
     }
-  }
 
-  td {
-    border-color: $crm-grayblue-dark;
+    td {
+      border-color: $crm-grayblue-dark;
+    }
   }
 }
 

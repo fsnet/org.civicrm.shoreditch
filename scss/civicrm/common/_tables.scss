@@ -1,6 +1,31 @@
 /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-no-qualifying-type, selector-max-id */
 
 table {
+  // Fixes for Gin admin theme.
+  box-sizing: content-box;
+
+  tbody {
+    tr {
+      border-bottom: 0;
+    }
+  }
+
+  tr {
+    border-bottom: 0;
+
+    &:hover,
+    &:focus {
+      background: inherit;
+      color: inherit;
+    }
+  }
+
+  td,
+  th {
+    box-sizing: content-box;
+    height: inherit;
+  }
+
   .crm-icon {
     @include contact-type-icons();
   }

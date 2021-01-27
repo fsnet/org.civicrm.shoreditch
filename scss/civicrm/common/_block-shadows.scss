@@ -68,7 +68,8 @@
 #crm-main-content-wrapper,
 #crm-container {
   position: relative;
-  z-index: 1;
+  // Fix for Gin admin theme.
+  z-index: 101;
 }
 
 @include block-shadows-for-h3-crm-form-block-pair();

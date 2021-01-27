@@ -1,0 +1,46 @@
+/* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-no-qualifying-type, selector-max-id, scss/at-extend-no-missing-placeholder */
+
+body {
+
+  // Fixes for Gin admin theme. Implies $params['height'] = 40.
+  &.gin--horizontal-toolbar.crm-menubar-visible {
+    &.crm-menubar-over-cms-menu {
+      padding-top: 80px !important;
+
+      #toolbar-administration {
+        position: relative;
+        z-index: 100000;
+      }
+    }
+
+    &.crm-menubar-below-cms-menu {
+      padding-top: 120px !important;
+
+      #toolbar-administration {
+        position: relative;
+        z-index: 100000;
+      }
+    }
+  }
+
+  &.gin--vertical-toolbar.crm-menubar-visible {
+    &.crm-menubar-over-cms-menu,
+    &.crm-menubar-below-cms-menu {
+      padding-top: 80px !important;
+
+      #toolbar-administration {
+        display: block;
+        position: relative;
+        z-index: 100000;
+      }
+
+      > #civicrm-menu-nav ul#civicrm-menu {
+        top: 0;
+      }
+
+      #civicrm-menu #crm-menubar-toggle-position {
+        display: none;
+      }
+    }
+  }
+}
